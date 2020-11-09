@@ -12,6 +12,7 @@ namespace GoF
             _threshold = threshold;
             _absoluteDiscount = absoluteDiscount;
         }
+
         public decimal GetTotal(Sale sale)
         {
             if(sale.Amount >= _threshold)

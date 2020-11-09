@@ -71,5 +71,18 @@ namespace GoF.Tests.Strategy
             timeSourceMock.Verify(x => x.Now, Times.Once);
             result.Should().Be(80);
         }
+
+        [Test]
+        public void NoPricingStrategy_When100_Then100()
+        {
+            // Arrange
+            var sale = new Sale(100, new NullPricingStrategy());
+            
+            // Act
+            var result = sale.GetTotal();
+
+            // Assert
+            result.Should().Be(100);
+        }
     }
 }
